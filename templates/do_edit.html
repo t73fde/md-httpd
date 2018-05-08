@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}{{name}}{% endblock %}
+{% block content %}
+<form action="{{ url_for('do_edit', name=name) }}" method=POST>
+    <textarea name="data" rows="20" cols="100">{{ data }}</textarea>
+
+    <input type="submit" value="Save">
+    <input type="reset" value="Reset">
+</form>{% endblock %}

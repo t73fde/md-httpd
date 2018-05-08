@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block title %}Delete note{% endblock %}
+{% block content %}
+<form action="{{ url_for('do_delete', name=name) }}" method=POST>
+    Really delete note &quot;{{ name }}&quot;?
+    <input type="submit" value="Yes">
+</form>{% endblock %}

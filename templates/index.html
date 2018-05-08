@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title%}Notes{% endblock %}
+{% block content -%}
+<a href="{{ url_for('do_new') }}">new</a>
+
+<table>
+    {% for i in infos -%}
+    <tr>
+        <td><a href="{{url_for('do_view', name=i['name'])}}">{{i['name']}}</a></td>
+        <td>{{i['modified']}}</td>
+        <td><a href="{{url_for('do_edit', name=i['name'])}}">edit</a></td>
+    </tr>
+    {%- endfor %}
+</table>
+{%- endblock %}

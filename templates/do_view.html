@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block title %}{{name}}{% endblock %}
+{% block content %}
+<a href="{{ url_for('do_edit', name=name) }}">edit</a>
+<a href="{{ url_for('do_delete', name=name) }}">delete</a>
+
+{% autoescape false %}{{content}}{% endautoescape %}
+{% endblock %}
